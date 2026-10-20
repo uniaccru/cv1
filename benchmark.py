@@ -44,7 +44,6 @@ def best_time(fn, arg, repeat):
 if __name__ == "__main__":
     results = {}
 
-    # Quality check on 256x256, density 0.2
     clean = make_clean(256)
     noisy = salt_pepper(clean, 0.2)
     out_cv = adaptive_median_cv(noisy)
@@ -61,7 +60,6 @@ if __name__ == "__main__":
     cv2.imwrite("adaptive_cv.png", out_cv)
     cv2.imwrite("adaptive_native.png", out_nat)
 
-    # Speed: density sweep for quality, sizes for speed
     results["quality_vs_density_256"] = {}
     for d in [0.05, 0.1, 0.2, 0.3, 0.4]:
         n = salt_pepper(clean, d, seed=2)
@@ -79,7 +77,7 @@ if __name__ == "__main__":
         if s <= 256:
             t_nat, _ = best_time(adaptive_median_native, lst, repeat=1)
         else:
-            t_nat = None  # pure Python too slow at 512 for repeated runs
+            t_nat = None 
         if s == 512:
             t = time.perf_counter()
             adaptive_median_native(lst)

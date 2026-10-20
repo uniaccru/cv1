@@ -1,9 +1,3 @@
-"""Adaptive median filter (variable kernel size), pure Python, no numpy/OpenCV.
-
-Image format: list of rows, each row a list of ints in [0, 255].
-"""
-
-
 def _pad_replicate(img, r):
     h, w = len(img), len(img[0])
     padded = []
@@ -16,7 +10,6 @@ def _pad_replicate(img, r):
 
 
 def adaptive_median_native(img, max_size=7):
-    """img: list[list[int]], max_size: odd, >= 3. Returns list[list[int]]."""
     h, w = len(img), len(img[0])
     r_max = max_size // 2
     pad = _pad_replicate(img, r_max)
@@ -38,14 +31,12 @@ def adaptive_median_native(img, max_size=7):
                 zmax = win[-1]
                 zmed = win[len(win) // 2]
 
-                # Stage A: median is not an impulse
                 if zmin < zmed < zmax:
-                    # Stage B: center is not an impulse -> keep it, else median
                     out[y][x] = z if zmin < z < zmax else zmed
                     break
-                # Grow the window
+
                 if size >= max_size:
-                    out[y][x] = zmed  # fallback at max size
+                    out[y][x] = zmed 
                     break
                 size += 2
     return out

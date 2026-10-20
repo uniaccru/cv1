@@ -105,5 +105,5 @@
 ## 5. Использованные источники
 
 1. Gonzalez R. C., Woods R. E. *Digital Image Processing*. Pearson. Раздел про адаптивный медианный фильтр.
-2. Документация OpenCV: `cv2.medianBlur`, `cv2.erode`, `cv2.dilate`. https://docs.opencv.org
-3. Документация NumPy. https://numpy.org/doc
+2. Клод код
+3. Какой то индус на ютубе

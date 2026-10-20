@@ -1,0 +1,58 @@
+{
+  "quality_256_p20": {
+    "psnr_noisy": 12.24,
+    "psnr_fixed_median3": 29.68,
+    "psnr_adaptive_cv": 36.31,
+    "psnr_adaptive_native": 36.31,
+    "pixels_differ_cv_vs_native": 0
+  },
+  "quality_vs_density_256": {
+    "0.05": {
+      "noisy": 18.09,
+      "fixed_median3": 37.38,
+      "adaptive": 40.39
+    },
+    "0.1": {
+      "noisy": 15.15,
+      "fixed_median3": 35.7,
+      "adaptive": 38.79
+    },
+    "0.2": {
+      "noisy": 12.23,
+      "fixed_median3": 29.74,
+      "adaptive": 36.96
+    },
+    "0.3": {
+      "noisy": 10.44,
+      "fixed_median3": 24.04,
+      "adaptive": 34.27
+    },
+    "0.4": {
+      "noisy": 9.17,
+      "fixed_median3": 18.99,
+      "adaptive": 32.79
+    }
+  },
+  "speed": {
+    "64": {
+      "opencv_s": 0.00082,
+      "native_s": 0.006,
+      "ratio_native_over_cv": 6.8
+    },
+    "128": {
+      "opencv_s": 0.00103,
+      "native_s": 0.026,
+      "ratio_native_over_cv": 24.9
+    },
+    "256": {
+      "opencv_s": 0.00368,
+      "native_s": 0.1,
+      "ratio_native_over_cv": 27.2
+    },
+    "512": {
+      "opencv_s": 0.01473,
+      "native_s": 0.4,
+      "ratio_native_over_cv": 27.2
+    }
+  }
+}

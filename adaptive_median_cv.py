@@ -3,7 +3,6 @@ import numpy as np
 
 
 def adaptive_median_cv(img: np.ndarray, max_size: int = 7) -> np.ndarray:
-    """img: uint8 grayscale image, max_size: odd, >= 3."""
     img = img.astype(np.uint8)
     out = img.copy()
     pending = np.ones(img.shape, dtype=bool)
